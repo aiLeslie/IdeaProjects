@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+</head>
+<body>
+
+
+<p id="displayByInterval"></p>
+<button onclick="clearMyInterval()">clear interval</button>
+<br/><br/>
+<p id="displayByTimeout"></p>
+<button onclick="clearMyTimeout()">clear timeout</button>
+<script>
+    /**
+     * 无限次间隔运行函数
+     * @type {number}
+     */
+    var interval = setInterval(function f() {
+        startTime();
+    },1000 / 24);
+    /**
+     * 只运行一次间隔运行函数
+     * 如果需要无限次运行,要在函数内加上setTimeout
+     * 不停调用该函数
+     * @type {number}
+     */
+    var timeout = setTimeout(function () {
+        startTimeout();
+    },1000 / 24);
+    function startTime() {
+        var date = new Date();
+        window.document.getElementById("displayByInterval").innerHTML = date.toLocaleTimeString();
+    }
+    function startTimeout() {
+        var date = new Date();
+        window.document.getElementById("displayByTimeout").innerHTML = date.toLocaleTimeString();
+        timeout = setTimeout(function () {
+            startTimeout();
+        },1000 / 24);
+    }
+    function clearMyInterval(){
+        clearInterval(interval);
+    }function clearMyTimeout(){
+        clearTimeout(timeout);
+    }
+
+
+</script>
+</body>
+</html>

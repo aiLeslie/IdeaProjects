@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            background-color: #a7b4ff;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container" class="box"></div>
+<img id="image" src="bd_logo1.png" alt="" width="200" height="100">
+<div id="display"></div>
+<script>
+    var container,display,image;
+
+    window.onload = function () {
+        container = document.getElementById("container");
+        display = document.getElementById("display");
+        image  = document.getElementById("image");
+        image.ondragstart = function (e) {
+            e.dataTransfer.setData("id","image")
+        }
+        container.ondragover = function (e) {
+            e.preventDefault();
+        }
+        //在拖动操作中封锁更新并在确定位置
+        container.ondrop = function (e) {
+            showObj(e);
+            // 显示拖动图象
+            e.preventDefault();
+            // image = document.getElementById(e.dataTransfer.getData("id"));
+            e.target.appendChild(image);
+        }
+
+    };
+
+
+    function showObj(event) {
+        var s = "";
+        for (var t in event) {
+            s += t + " - " + event[t] + "<br/>";
+        }
+        display.innerHTML = s;
+    }
+</script>
+</body>
+</html>

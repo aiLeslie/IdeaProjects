@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+            animation: anim 3s infinite alternate;
+            /*infinite alternate 使动画无限次循环*/
+            /*转换效果 需要浏览器的支持*/
+            -webkit-animation: anim 3s; /*safari chrome*/
+            -ms-animation: anim 3s infinite alternate; /*IE*/
+            -moz-animation: anim 3s; /*opera*/
+            -o-animation: anim 3s; /*firefox*/
+
+        }
+
+        @keyframes anim {
+            0% {
+                background: #ff9ca0;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background: #a7b4ff;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background: #ff9ca0;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background: #a7b4ff;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background: #ff9ca0;
+                left: 0px;
+                top: 0px;
+            }
+
+        -ms- @keyframes anim
+
+        {
+        0
+        %
+        {
+            background: red
+        ;
+            left: 0px
+        ;
+            top: 0px
+        ;
+        }
+        25
+        %
+        {
+            background: red
+        ;
+            left: 200px
+        ;
+            top: 0px
+        ;
+        }
+        50
+        %
+        {
+            background: red
+        ;
+            left: 200px
+        ;
+            top: 200px
+        ;
+        }
+        75
+        %
+        {
+            background: red
+        ;
+            left: 0px
+        ;
+            top: 200px
+        ;
+        }
+        100
+        %
+        {
+            background: red
+        ;
+            left: 0px
+        ;
+            top: 0px
+        ;
+        }
+        }
+    </style>
+</head>
+<body>
+<div>动画效果</div>
+</body>
+</html>

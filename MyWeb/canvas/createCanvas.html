@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create canvas</title>
+</head>
+<body>
+<script>
+    var canvas,context;
+    window.onload = function (){
+        canvas = createCanvas();
+        ondraw(canvas);
+    }
+
+    /**
+     * 创建画布
+     * @returns {HTMLElement | null}
+     */
+    function createCanvas() {
+        document.body.innerHTML = "<canvas id='canvas' width='500' height='500'></canvas>";
+        return document.getElementById("canvas");
+    }
+
+    /**
+     * 绘制图形
+     * @param canvas
+     */
+    function ondraw(canvas) {
+        context = canvas.getContext("2d");
+        context.color
+        //平移画布
+        context.translate(125,100);
+        //绘制矩形
+        context.fillRect(250,250,200,200);
+        context.fillRect(0,0,200,200);
+    }
+</script>
+</body>
+</html>

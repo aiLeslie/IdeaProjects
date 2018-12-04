@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+</head>
+<body>
+<script>
+    /**
+     * 第一种使用对象方式
+     * @type {Object}
+     */
+    people = new Object();
+    people.name = "李伟斌";
+    people.age = 20;
+    document.write(people.name + "\t");
+    document.write(people.age + "<br/>");
+    /**
+     * 第二种使用对象方式
+     * @type {Object}
+     */
+    function People(name , age){
+        this.name = name;
+        this.age = age;
+    }
+    people = new People("李伟斌",20);
+    document.write(people.name + "\t");
+    document.write(people.age + "<br/>");
+    /**
+     * 第三种使用对象方式
+     * @type {Object}
+     */
+    people = {name : "李伟斌",age : 20};
+    document.write(people.name + "\t");
+    document.write(people.age + "<br/>");
+
+
+</script>
+</body>
+</html>

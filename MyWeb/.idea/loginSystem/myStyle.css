@@ -1,0 +1,70 @@
+.head {
+    width: 966px;
+    height: 103px;
+    /*background-color: pink;*/
+    /*让盒子居中*/
+    margin: 0 auto;
+
+}
+
+.logo {
+    width: 277px;
+    height: 103px;
+    /*设置背景图案*/
+    background-image: url("../../bd_logo1.png");
+    /*设置图案尺寸*/
+    background-size: 100% 100%;
+
+    float: left;
+}
+
+.right {
+    width: 679px;
+    height: 103px;
+    float: right;
+
+}
+.right .time{
+    width: 150px;
+    height: 53px;
+    float: right;
+    background-color: #a7b4ff;
+}
+.right .msg{
+    width: 679px;
+    height: 42px;
+    float: right;
+    margin-top: 8px;
+    background-color: green;
+}
+.content{
+
+    width: 966px;
+    height: 435px;
+
+    /*让盒子居中*/
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.content .box1{
+    width: 310px;
+    height: 435px;
+    background-color: yellow;
+    float: left;
+    /*margin-top: 10px;*/
+}
+.content .box2{
+    padding-top: 150px;
+    width: 650px;
+    height: 285px;
+    background-color: pink;
+    float: right;
+    /*margin-top: 10px;*/
+}
+.footer{
+    width: 970px;
+    height: 35px;
+    background-color: blue;
+    margin: 0 auto;
+}

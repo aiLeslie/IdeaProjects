@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body onload="startTime()">
+<script>
+    var date = new Date();
+
+    function updateTime()
+    {
+        document.write(date);//打印数组a
+        document.write("<br/>" + "当前年份: " + date.getFullYear() + "<br/>");
+        document.write("当前月份: " + date.getMonth() + "<br/>");
+        document.write("当前号数: " + date.getDate() + "<br/>");
+        document.write("星期" + date.getDay() + "<br/>");
+
+        setTimeout(function () {
+            updateTime();
+        },500);
+    }
+
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("display").innerHTML = h + " : " + m + " : " + s ;
+        setTimeout(function () {
+            startTime();
+        },500);
+    }
+    function checkTime(i) {
+        if (i < 10){
+            return "0" + i ;
+        }else {
+            return i ;
+        }
+    }
+
+
+</script>
+<div id="display"></div>
+</body>
+</html>

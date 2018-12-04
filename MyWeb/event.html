@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: #a7b4ff;
+    }
+    </style>
+</head>
+<body>
+<script>
+    function onClickEvent(){
+        window.alert("on clicked");
+    }
+    function mouseOver(ooj) {
+        ooj.innerHTML = "in";
+    }
+    function mouseOut(ooj) {
+        ooj.innerHTML = "out";
+    }
+    function textChange() {
+        window.alert("The content has changed!");
+    }
+    function textSelected() {
+        window.alert("The content has selected!");
+    }
+</script>
+<button onclick="onClickEvent()">
+    按钮
+</button>
+<div class="box" onmouseout="mouseOut(this)" onmouseover="mouseOver(this)"></div>
+<form>
+    <input type="text" onchange="textChange()" onselect="textSelected()">
+</form>
+</body>
+</html>

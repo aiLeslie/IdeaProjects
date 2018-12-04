@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>windowObject</title>
+</head>
+<body>
+<script>
+    window.document.write("窗口的长度: " + window.innerHeight + "<br/>");
+    window.document.write("窗口的宽度: " + window.innerWidth + "<br/>");
+    function startUrl() {
+        window.open('https://www.baidu.com/index.php','百度','width = 500 height = 400',true);
+    }
+    function closeUrl() {
+        window.close();
+    }
+</script>
+<button onclick="startUrl()">打开网页</button>
+<button onclick="closeUrl()">关闭网页</button>
+</body>
+</html>

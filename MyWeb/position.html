@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+    <style>
+        #postion1{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /*position: static; - 偏移量不起效果*/
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            /*z-index的值越大 离用户越近*/
+            z-index: 1;
+        }
+
+        #postion2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*position: static; - 偏移量不起效果*/
+            position: absolute;
+            left: 60px;
+            top: 60px;
+            /*z-index的值越大 离用户越近*/
+            z-index: 2;
+
+        }
+        #postion3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            /*position: static; - 偏移量不起效果*/
+            position: absolute;
+            left: 90px;
+            top: 90px;
+            /*z-index的值越大 离用户越近*/
+            z-index: 3;
+
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="postion1"></div>
+<div id="postion2"></div>
+<div id="postion3"></div>
+
+<script>
+    for ( var i = 0;i < 98 ; i++){
+        document.write(i  + " ");
+    }
+    document.write("<br/>");
+    for ( var i = 1;i <= 100 ; i++){
+        document.write(i + "<br/>");
+    }
+
+</script>
+
+
+</body>
+</html>

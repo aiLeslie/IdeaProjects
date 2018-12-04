@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trans</title>
+</head>
+<style>
+
+
+    .box1{
+        width: 200px;
+        height: 200px;
+        background-color: #a7b4ff;
+    }
+    /*平移转换*/
+    .box2{
+        width: 200px;
+        height: 200px;
+        background-color: #ff9ca0;
+        transform: translate(300px,300px);
+        /*转换效果 需要浏览器的支持*/
+        -webkit-transform: translate(300px,300px);/*safari chrome*/
+        -ms-transform: translate(300px,300px);/*IE*/
+        -moz-transform: translate(300px,300px);/*opera*/
+        -o-transform: translate(300px,300px);/*firefox*/
+    }
+    /*旋转转换*/
+    .box2{
+        width: 200px;
+        height: 200px;
+        background-color: #ff9ca0;
+        transform: rotate(45deg);
+
+    }
+    /*伸缩转换*/
+    .box3{
+        width: 200px;
+        height: 200px;
+        background-color: mediumpurple;
+        transform: scale(2,1);
+
+    }
+
+</style>
+
+<body>
+<div class="box1"><center>改变前</center></div>
+<br/><br/><br/><br/>
+<div class="box2"><center>旋转转换后</center></div>
+<br/><br/><br/><br/>
+<div class="box3"><center>伸缩转换后</center></div>
+<br/><br/><br/><br/>
+
+</body>
+</html>

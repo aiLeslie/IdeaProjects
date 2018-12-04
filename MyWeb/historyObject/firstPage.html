@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>firstPage</title>
+</head>
+<body>
+<a href="secondPage.html">跳转到第二个页面</a>
+<script>
+    function goback(){
+        window.history.back();
+    }
+    function goforward(){
+        window.history.forward();
+    }
+</script>
+<button onclick="goback()">返回上一个页面</button>
+<button onclick="goforward()">跳转到下一个页面</button>
+</body>
+</html>

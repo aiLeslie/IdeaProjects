@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>translation</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /*秒数为执行过渡的总时间*/
+            /*-webkit-transition: width 1s,height 1s,transform 1s;*/
+            /*-moz-transition: width 1s,height 1s,transform 1s;*/
+            /*-ms-transition: width 1s,height 1s,transform 1s;*/
+            /*-o-transition: width 1s,height 1s,transform 1s;*/
+            transition: width 1s,height 1s,transform 1s;
+        }
+        div:hover{
+            width: 500px;
+            height: 500px;
+            transform: rotate(360deg);
+            /*-ms-transform: rotate(360deg);*/
+        }
+    </style>
+</head>
+<body>
+<div>展现效果</div>
+</body>
+</html>
