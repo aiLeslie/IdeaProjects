@@ -3,9 +3,12 @@ package com.leslie.mysql.base.connection.impl;
 import com.leslie.mysql.base.connection.SQLConnectable;
 import com.leslie.mysql.base.statement.SQLStatement;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.function.Consumer;
 
 public class MySQLConnector implements SQLConnectable, SQLStatement {
@@ -13,6 +16,21 @@ public class MySQLConnector implements SQLConnectable, SQLStatement {
     private Connection mConnection;
     private Statement mStatement;
     private HashMap<String, PreparedStatement> preparedStatemens = new HashMap<>();
+
+    public static MySQLConnector createMySQLConnectorFromProperties(String path) {
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream(path));
+            return new MySQLConnector.Builder().host(properties.getProperty("host")).port(properties.getProperty("port")).user(properties.getProperty("user")).pwd(properties.getProperty("pwd")).build();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            properties.clear();
+        }
+        return null;
+
+    }
 
     public MySQLConnector(Builder builder) {
         mBuilder = builder;
@@ -176,6 +194,7 @@ public class MySQLConnector implements SQLConnectable, SQLStatement {
         private String port;
         private String user;
         private String pwd;
+
 
         public String getHost() {
             return host;

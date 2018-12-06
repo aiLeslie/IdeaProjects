@@ -9,7 +9,9 @@ import java.sql.SQLException;
 public class QueryTest {
 	public static void main(String[] args) throws SQLException {
 
-		MySQLConnector mySQLConnector = new MySQLConnector.Builder().host("localhost").port("3306").user("root").pwd("980517").build();
+//		MySQLConnector mySQLConnector = new MySQLConnector.Builder().host("localhost").port("3306").user("root").pwd("980517").build();
+
+		MySQLConnector mySQLConnector = MySQLConnector.createMySQLConnectorFromProperties("./asset/mysql.properties");
 
 		AsyncSQLConnector connector = new AsyncSQLConnector(mySQLConnector);
 
@@ -27,6 +29,6 @@ public class QueryTest {
 
 		, "id", "name", "age", "regTime");
 		
-		connector.disconnect();
+//		connector.disconnect();
 	}
 }
