@@ -128,7 +128,7 @@ public class MySQLConnector implements SQLConnectable, SQLStatement {
                 return false;
             } else {
                 preparedStatement.execute();
-                return false;
+                return true;
             }
 
         } catch (SQLException e) {

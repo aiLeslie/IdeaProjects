@@ -1,5 +1,6 @@
 package com.leslie.mysql.book;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
 
@@ -41,7 +42,7 @@ public class Book {
         private String name;
         private String author;
         private String content;
-        private Timestamp pubDate;
+        private Date pubDate;
         private float price;
 
 
@@ -63,8 +64,9 @@ public class Book {
             return name;
         }
 
-        public void setName(String name) {
+        public Builder name(String name) {
             this.name = name;
+            return this;
         }
 
         public String getAuthor() {
@@ -87,11 +89,11 @@ public class Book {
 
         }
 
-        public Timestamp getPubDate() {
+        public Date getPubDate() {
             return pubDate;
         }
 
-        public Builder pubDate(Timestamp pubDate) {
+        public Builder pubDate(Date pubDate) {
             this.pubDate = pubDate;
             return this;
 
