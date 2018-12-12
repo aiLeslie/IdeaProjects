@@ -19,14 +19,14 @@ public class BookTest {
         Book book = library.findBookById(1);
 
         System.out.println(book.toString());
-
-        book.info().content("55");
-
-        library.upadateBook(book);
-
-         book = library.findBookById(1);
-
-        System.out.println(book.toString());
+//
+//        book.info().content("55");
+//
+//        library.upadateBook(book);
+//
+//         book = library.findBookById(1);
+//
+//        System.out.println(book.toString());
 
         library.exit();
     }

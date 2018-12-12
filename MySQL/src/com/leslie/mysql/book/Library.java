@@ -18,7 +18,7 @@ public class Library implements IBookManage {
         mLibrary.mySQLConnector = new MySQLConnector.Builder().host("localhost").port("3306").user("root").pwd("980517").build();
         try {
             // 选择合适的数据库
-            mLibrary.mySQLConnector.statement().execute("use library;");
+            mLibrary.mySQLConnector.statement().execute("use mybase;");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -47,7 +47,13 @@ public class Library implements IBookManage {
             }
         }, "id", "name", "author", "price", "content", "pubDate");
 
-        return builder.build();
+        if (builder.isNull()) {
+            return null;
+        } else {
+            return builder.build();
+        }
+
+
     }
 
     @Override
@@ -75,6 +81,10 @@ public class Library implements IBookManage {
 
     @Override
     public boolean addBook(Book book) {
+        if (book.isNull()) {
+            return false;
+        }
+
         return mySQLConnector.excutePreparedStatement("INSERT INTO `book`(`id`,`author`,`content`,`pubDate`,`price`,`name`)VALUES({id ?},{author ?},{content ?},{pubDate ?},{price ?},{name ?});",
                 book.info().getId(),
                 book.info().getAuthor(),

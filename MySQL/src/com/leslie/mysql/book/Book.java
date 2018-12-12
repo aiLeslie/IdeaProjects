@@ -1,15 +1,15 @@
 package com.leslie.mysql.book;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Nullable {
     private Builder mBuilder;
 
     public Book(Builder mBuilder) {
         this.mBuilder = mBuilder;
     }
+
     public Builder info() {
         return mBuilder;
     }
@@ -37,7 +37,12 @@ public class Book {
         return mBuilder.toString();
     }
 
-    public static class Builder {
+    @Override
+    public boolean isNull() {
+        return mBuilder.isNull();
+    }
+
+    public static class Builder implements Nullable {
         private int id;
         private String name;
         private String author;
@@ -110,15 +115,30 @@ public class Book {
         }
 
         @Override
+        public boolean isNull() {
+            if (id == 0 || content == null || name == null) {
+                return true;
+            }
+
+            return false;
+        }
+
+        @Override
         public String toString() {
-            return "Info{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", author='" + author + '\'' +
-                    ", content='" + content + '\'' +
-                    ", pubDate=" + pubDate +
-                    ", price=" + price +
-                    '}';
+            if (!isNull()) {
+                return "Info{" +
+                        "id=" + id +
+                        ", name='" + name + '\'' +
+                        ", author='" + author + '\'' +
+                        ", content='" + content + '\'' +
+                        ", pubDate=" + pubDate +
+                        ", price=" + price +
+                        '}';
+            } else {
+                return "I am null object!";
+            }
+
+
         }
     }
 }
